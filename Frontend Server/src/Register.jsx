@@ -1,7 +1,7 @@
  
 import React, { useState } from "react";
 
-export const Register = (props) => {
+export const Register = ({onFormSwitch}) => {
     const [email, setEmail] = useState('');
     const [pass, setPass] = useState('');
     const [name, setName] = useState('');
@@ -23,7 +23,7 @@ export const Register = (props) => {
             <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="********" id="password" name="password" />
             <button type="submit">Log In</button>
         </form>
-        <button className="link-btn" onClick={() => props.onFormSwitch('login')}>Already have an account? Login here.</button>
+        <button className="link-btn" onClick={() => onFormSwitch('login')}>Already have an account? Login here.</button>
     </div>
     )
 }
